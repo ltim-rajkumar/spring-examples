@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="bookingService" class="com.ltim.practice.service.BookingService">
+        <constructor-arg ref="booking" />
+    </bean>
+
+    <bean id="booking" class="com.ltim.practice.model.Booking">
+        <property name="id" value="1"/>
+        <property name="price" value="200.2"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+    <bean id="address" class="com.ltim.practice.model.Address">
+        <property name="addressLine1" value="ABC Apt" />
+        <property name="addressLine2" value="Baner" />
+        <property name="city" value="Pune" />
+    </bean>
+
+</beans>
